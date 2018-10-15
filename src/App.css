@@ -1,0 +1,36 @@
+.site {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer"
+}
+
+.header {
+  border: 1px black solid;
+  grid-area: header;
+}
+
+.footer {
+  border: 1px black solid;
+  grid-area: footer;
+}
+
+.main {
+  border: 1px black solid;
+  grid-area: main;
+}
+
+.aside {
+  border: 1px black solid;
+  grid-area: aside;
+}
+
+.bookCover {
+  border: 1px black solid;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+}
