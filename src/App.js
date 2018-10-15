@@ -8,8 +8,8 @@ import Checkout from './Checkout'
 class App extends Component {
 
   state = {
+    masterList: [],
     books: [],
-    displayBooks: [],
     cart: []
   }
 
@@ -24,29 +24,32 @@ class App extends Component {
         pages: book.pages,
         inCart: false,
       }
-      this.setState({displayBooks: this.state.displayBooks.concat(book)})
+      this.setState({masterList: this.state.masterList.concat(book)})
       return this.setState({books: this.state.books.concat(book)})
 
     })
   }
 
   bookFilter = (e) => {
-    let selectedBook = this.state.books.filter(book => (book.author.toLowerCase().includes(e.target.value)) || (book.title.toLowerCase().includes(e.target.value)))
+    let selectedBook = this.state.masterList.filter(book => (book.author.toLowerCase().includes(e.target.value)) || (book.title.toLowerCase().includes(e.target.value)))
     console.log(e.target.value, {selectedBook})
-    this.setState({displayBooks: selectedBook})
+    this.setState({books: selectedBook})
   }
 
   addToCart = () => {
-    this.state.displayBooks.map(book => this.setState(console.log(book)))
-    // this.setState({cart: this.state.cart.concat(this.state.displayBooks)})
+    this.setState({cart: this.state.cart.concat(this.state.books)})
+  }
+
+  clearCart = () => {
+    this.setState({cart: []})
   }
 
   render() {
     return (
       <div className="site">
         <Header />
-        <BookList books={this.state.books} displayBooks={this.state.displayBooks} bookFilter={this.bookFilter} addToCart={this.addToCart}/>
-        <Checkout cart={this.state.cart}/>
+        <BookList books={this.state.books} bookFilter={this.bookFilter} addToCart={this.addToCart}/>
+        <Checkout clearCart={this.clearCart} cart={this.state.cart}/>
         <Footer />
       </div>
     )

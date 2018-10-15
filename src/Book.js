@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Book = ({displayBooks}) => {
+const Book = ({book}) => {
     return (
       <div className="bookCover">
-        <h4>{displayBooks.title}</h4>
-        <p>{displayBooks.author}</p>
-        <p>{displayBooks.pages} pages</p>
+        <h4>{book.title}</h4>
+        <p>{book.author}</p>
+        <p>{book.pages} pages</p>
       </div>
     )
 }

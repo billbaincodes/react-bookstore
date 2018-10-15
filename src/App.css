@@ -10,27 +10,31 @@
 
 .header {
   border: 1px black solid;
+  padding: 1em;
   grid-area: header;
 }
 
 .footer {
   border: 1px black solid;
+  padding: 1em;
   grid-area: footer;
 }
 
 .main {
   border: 1px black solid;
+  padding: 1em;
   grid-area: main;
 }
 
 .aside {
   border: 1px black solid;
+  padding: 1em;
   grid-area: aside;
 }
 
 .bookCover {
   border: 1px black solid;
   margin: 1em;
-  padding: 1em;
+  /* padding: 1em; */
   text-align: center;
 }
