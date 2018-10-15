@@ -10,13 +10,14 @@
 
 .header {
   border: 1px black solid;
-  padding: 1em;
+  text-align: center;
   grid-area: header;
 }
 
 .footer {
   border: 1px black solid;
   padding: 1em;
+  text-align: center;
   grid-area: footer;
 }
 
@@ -35,6 +36,6 @@
 .bookCover {
   border: 1px black solid;
   margin: 1em;
-  /* padding: 1em; */
   text-align: center;
+  box-shadow: 4px 4px grey;
 }

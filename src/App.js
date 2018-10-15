@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   bookFilter = (e) => {
-    let selectedBook = this.state.masterList.filter(book => (book.author.toLowerCase().includes(e.target.value)) || (book.title.toLowerCase().includes(e.target.value)))
+    let selectedBook = this.state.masterList.filter(book => (book.author.toUpperCase().includes(e.target.value.toUpperCase())) || (book.title.toUpperCase().includes(e.target.value.toUpperCase())))
     console.log(e.target.value, {selectedBook})
     this.setState({books: selectedBook})
   }
