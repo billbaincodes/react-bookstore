@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Book from "./Book"
 
 
@@ -6,12 +6,13 @@ class BookList extends Component {
 
   render() {
     return (
-      <div>
+      <main className="main">
         <h3>Behold, my books</h3>
-        {this.props.books.map(book => <Book book={book} />)}
-      </div>
-    );
+        Search by Title or Author: <input onChange={this.props.bookFilter}/>
+        {this.props.displayBooks.map(book => <Book displayBooks={book} />)}
+      </main>
+    )
   }
 }
 
-export default BookList;
+export default BookList

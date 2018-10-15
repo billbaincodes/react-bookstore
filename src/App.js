@@ -30,18 +30,17 @@ class App extends Component {
     })
   }
 
-  authorFilter = (e) => {
-    let selectedAuthor = this.state.books.filter(book => book.author === e.target.value)
-    console.log(selectedAuthor[0])
-    // this.setState({cartedBooks: this.state.cartedBooks.concat(selectedAuthor[0])})
-    return this.setState({displayBooks: this.state.books.concat(selectedAuthor[0])})
+  bookFilter = (e) => {
+    let selectedBook = this.state.books.filter(book => (book.author.toLowerCase().includes(e.target.value)) || (book.title.toLowerCase().includes(e.target.value)))
+    console.log(e.target.value, {selectedBook})
+    this.setState({displayBooks: selectedBook})
   }
 
   render() {
     return (
       <div className="site">
         <Header />
-        <BookList books={this.state.books} displayBooks={this.state.displayBooks} authorFilter={this.authorFilter}/>
+        <BookList books={this.state.books} displayBooks={this.state.displayBooks} bookFilter={this.bookFilter}/>
         <Checkout cart={this.state.cart}/>
         <Footer />
       </div>

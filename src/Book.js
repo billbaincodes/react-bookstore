@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-const Book = ({book}) => {
+const Book = ({displayBooks}) => {
     return (
-      <div className="bookshelf">
-        <h4>{book.title}</h4>
-        <p>{book.author}</p>
-        <p>{book.pages} pages</p>
+      <div className="bookCover">
+        <h4>{displayBooks.title}</h4>
+        <p>{displayBooks.author}</p>
+        <p>{displayBooks.pages} pages</p>
       </div>
-    );
+    )
 }
 
-export default Book;
+export default Book
