@@ -36,11 +36,16 @@ class App extends Component {
     this.setState({displayBooks: selectedBook})
   }
 
+  addToCart = () => {
+    this.state.displayBooks.map(book => this.setState(console.log(book)))
+    // this.setState({cart: this.state.cart.concat(this.state.displayBooks)})
+  }
+
   render() {
     return (
       <div className="site">
         <Header />
-        <BookList books={this.state.books} displayBooks={this.state.displayBooks} bookFilter={this.bookFilter}/>
+        <BookList books={this.state.books} displayBooks={this.state.displayBooks} bookFilter={this.bookFilter} addToCart={this.addToCart}/>
         <Checkout cart={this.state.cart}/>
         <Footer />
       </div>

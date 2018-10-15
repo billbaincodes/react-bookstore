@@ -9,6 +9,7 @@ class BookList extends Component {
       <main className="main">
         <h3>Behold, my books</h3>
         Search by Title or Author: <input onChange={this.props.bookFilter}/>
+        <button onClick={this.props.addToCart}>Add to Cart</button>
         {this.props.displayBooks.map(book => <Book displayBooks={book} />)}
       </main>
     )
